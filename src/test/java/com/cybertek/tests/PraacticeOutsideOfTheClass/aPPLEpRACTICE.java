@@ -29,6 +29,7 @@ public class aPPLEpRACTICE {
         System.out.println("number of links "+ numberOFLinks);
         System.out.println("HAs text links "+hasText);
         System.out.println("has mo text "+hasNoText);
+        System.out.println();
 
     }
 }
