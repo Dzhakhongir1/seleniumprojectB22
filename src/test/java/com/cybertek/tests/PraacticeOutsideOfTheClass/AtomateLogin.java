@@ -21,6 +21,7 @@ public class AtomateLogin {
     public static void main(String[] args) throws InterruptedException {
         WebDriver driver = WebDriverFactory.getDriver("chrome");
         driver.manage().window().maximize();
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         driver.get("https://qa3.vytrack.com/user/login");
        // Given the user is Truck Driver
         // And the user is on the Vytrack Login page
@@ -30,7 +31,6 @@ public class AtomateLogin {
         driver.findElement(By.id("prependedInput2")).sendKeys("UserUser123"+Keys.ENTER);
         //Then the user should successfully login
         //And see the Truck Driver account’s page
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
          String ActualTitle =driver.getTitle();
          String expectedTitle = "Dashboard";
          if (ActualTitle.equals(expectedTitle)){
