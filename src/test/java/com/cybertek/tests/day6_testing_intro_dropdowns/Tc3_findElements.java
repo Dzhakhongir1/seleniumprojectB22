@@ -41,14 +41,23 @@ public class Tc3_findElements {
             System.out.println("current title "+ driver.getTitle());
 //        * 5. Print out total number of links in each page
             List<WebElement>allLinks = driver.findElements(By.xpath("//body//a"));
-            System.out.println("Number of links in current page "+allLinks.size());
+            System.out.println("Total of links in current page "+allLinks.size());
+            int LinksWithNoText=0;
+            int LinksWithText=0;
+            for (WebElement each : allLinks) {
+                if (each.getText().isEmpty()){
+                    LinksWithNoText++;
+                }else{
+                    LinksWithText++;
+                }
 
-        }
-//        * 4. Print out the titles of the each page
-//        * 5. Print out total number of links in each page
+            }
 //        * 6. While in each page:
 //        * a. Print out how many link is missing text TOTAL
+            System.out.println("--->Current page links with No Text"+LinksWithNoText);
 //        * b. Print out how many link has text TOTAL
+            System.out.println("--->Current page links with  Text"+LinksWithText);
+        }
 
     }
 }
